@@ -20,11 +20,11 @@ function [V,F,N] = read_vertices_and_faces_from_obj_file(filename)
   fid = fopen(filename,'rt');
   line = fgets(fid);
   while ischar(line)
-    vertex = sscanf(line,'v %f %f %f');
-    vertex_normal = sscanf(line, 'vn %f %f %f');
-    face = sscanf(line,'f %d %d %d');
-    face_long = sscanf(line,'f %d//%d %d//%d %d//%d',6);
-    face_long_long = sscanf(line,'f %d/%d/%d %d/%d/%d %d/%d/%d',9);
+    vertex = sscanf(line,'v %f %f %f')
+    vertex_normal = sscanf(line, 'vn %f %f %f')
+    face = sscanf(line,'f %d %d %d')
+    face_long = sscanf(line,'f %d//%d %d//%d %d//%d',6)
+    face_long_long = sscanf(line,'f %d/%d/%d %d/%d/%d %d/%d/%d',9)
 
     % see if line is vertex command if so add to vertices
     if(size(vertex)>0)
